@@ -220,25 +220,43 @@
                 <button class="btn" id="next-btn-3">A Little Surprise</button>
             </div>
 
-           <!-- Step 4: Memory Lane -->
+<!-- Step 4: Memory Lane -->
 <div class="step" id="step4">
     <div class="emoji">📸</div>
     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Us...</h2>
 
-    <div style="display:flex; justify-content:center; margin-top:10px;">
-        <img src="main.jpg" style="width:300px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+    <!-- Cinematic Image -->
+    <div style="position:relative; width:100%; max-width:700px; margin:auto;">
+        
+        <img src="main.jpg" 
+             style="width:100%; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.35);">
+
+        <!-- Overlay Text -->
+        <div style="
+            position:absolute;
+            bottom:0;
+            left:0;
+            right:0;
+            text-align:center;
+            color:white;
+            font-size:18px;
+            font-style:italic;
+            background:linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding:20px;
+            border-radius:0 0 20px 20px;
+        ">
+            “Every moment with you feels like this… effortless and beautiful.”
+        </div>
+
     </div>
 
-    <p style="margin-top:15px; font-style:italic; color:#555;">
-        “Every moment with you feels like this… effortless and beautiful.”
-    </p>
-
-    <p class="text-lg text-gray-700 mt-6">
+    <!-- Main Emotional Text -->
+    <p class="text-lg text-gray-700 mt-8">
         I don’t know when it happened… but somewhere between our conversations and smiles,
         you became my favorite person.
     </p>
 
-    <p class="text-lg text-gray-600 italic">
+    <p class="text-lg text-gray-600 italic mt-2">
         And honestly… that’s my favorite part of every day.
     </p>
 
