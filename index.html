@@ -1,179 +1,171 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Someone Special ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Someone Special ❤️</title>
 
+```
 <script src="https://cdn.tailwindcss.com"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <style>
-body {
-    margin: 0;
-    overflow: hidden;
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    background: linear-gradient(135deg, #f9a8d4, #f3e8ff);
-}
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: 'Inter', sans-serif;
+        height: 100vh;
+        touch-action: manipulation;
+        background: linear-gradient(135deg, #f9a8d4, #f3e8ff);
+    }
 
-#app {
-    width: 100%;
-    height: 100%;
-}
+    #app {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
 
-#content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+    #content {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
 
-.step {
-    position: absolute;
-    width: 100%;
-    max-width: 700px;
-    padding: 25px;
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.5s;
-    pointer-events: none;
-}
+    .step {
+        position: absolute;
+        width: 100%;
+        max-width: 800px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+        pointer-events: none;
+    }
 
-.step.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-}
+    .step.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
 
-.btn {
-    background: linear-gradient(135deg,#ec4899,#f43f5e);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin-top: 20px;
-    cursor: pointer;
-}
+    .btn {
+        background: linear-gradient(135deg, #ec4899, #f43f5e);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
 
-#progress-container {
-    position: fixed;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 5px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 3px;
-}
+    #progress-container {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+    }
 
-#progress-bar {
-    height: 100%;
-    width: 0%;
-    background: pink;
-}
+    #progress-bar {
+        height: 100%;
+        width: 0%;
+        background: pink;
+        border-radius: 3px;
+    }
 
-#canvas-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
+    #canvas-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
 </style>
+```
 
 </head>
 
 <body>
 
 <div id="app">
-<div id="canvas-container"></div>
+    <div id="canvas-container"></div>
 
+```
 <div id="progress-container">
-<div id="progress-bar"></div>
+    <div id="progress-bar"></div>
 </div>
 
 <div id="content">
 
-<!-- Step 1 -->
+    <!-- Step 1 -->
+    <div class="step active" id="step1">
+        <h1>Hey Janvi ❤️</h1>
+        <p>I made something special for you...</p>
+        <button class="btn" id="start-btn">Open Slowly ❤️</button>
+    </div>
 
-<div class="step active" id="step1">
-<h1 class="text-3xl font-bold">Hey Janvi ❤️</h1>
-<p>I made something special for you...</p>
-<button class="btn" id="start-btn">Open Slowly ❤️</button>
-</div>
+    <!-- Step 2 -->
+    <div class="step" id="step2">
+        <h2>Happy Birthday ❤️</h2>
+        <p>You are amazing.</p>
+        <button class="btn" id="next-btn-2">Next</button>
+    </div>
 
-<!-- Step 2 -->
+    <!-- Step 3 -->
+    <div class="step" id="step3">
+        <h2>Why you're special</h2>
+        <p>Your smile, your kindness, everything.</p>
+        <button class="btn" id="next-btn-3">Next</button>
+    </div>
 
-<div class="step" id="step2">
-<h2 class="text-2xl font-bold">Happy Birthday ❤️</h2>
-<p>You are honestly amazing.</p>
-<button class="btn" id="next-btn-2">Next</button>
-</div>
+    <!-- Step 4 -->
+    <div class="step" id="step4">
+        <img src="main.jpg" style="width:100%; border-radius:20px;">
+        <p>I don’t know when… but you became my favorite person.</p>
+        <button class="btn" id="next-btn-4">Wait… there’s more 👀</button>
+    </div>
 
-<!-- Step 3 -->
+    <!-- Step 5 -->
+    <div class="step" id="step5">
+        <h2>Something I made for you 🎧</h2>
+        <audio controls>
+            <source src="rap.mp3">
+        </audio>
+        <button class="btn" id="next-btn-5">One Last Thing</button>
+    </div>
 
-<div class="step" id="step3">
-<h2 class="text-2xl font-bold">Why you're special</h2>
-<p>Your smile, your kindness, everything.</p>
-<button class="btn" id="next-btn-3">Next</button>
-</div>
-
-<!-- Step 4 -->
-
-<div class="step" id="step4">
-<img src="main.jpg" style="width:100%; border-radius:20px;">
-<p style="margin-top:10px;">
-I don’t know when it happened… but you became my favorite person.
-</p>
-<button class="btn" id="next-btn-4">Wait… there’s more 👀</button>
-</div>
-
-<!-- Step 5 -->
-
-<div class="step" id="step5">
-<h2 class="text-xl font-bold">Something I made for you 🎧</h2>
-
-<audio controls style="width:100%;">
-<source src="rap.mp3">
-</audio>
-
-<p style="margin-top:10px;">Every word in this is for you ❤️</p>
-
-<button class="btn" id="next-btn-5">One Last Thing</button>
+    <!-- Step 6 -->
+    <div class="step" id="step6">
+        <h2>Happy Birthday ❤️</h2>
+        <button class="btn" id="confetti-btn">Celebrate 🎉</button>
+    </div>
 
 </div>
+```
 
-<!-- Step 6 -->
-
-<div class="step" id="step6">
-<h2 class="text-2xl font-bold">Happy Birthday Janvi ❤️</h2>
-
-<button class="btn" id="confetti-btn">Celebrate 🎉</button>
-
-</div>
-
-</div>
 </div>
 
 <script>
 let currentStep = 1;
+const totalSteps = 6;
 
 function showStep(n){
-document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
-document.getElementById('step'+n).classList.add('active');
+    document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+    document.getElementById('step'+n).classList.add('active');
 }
 
 document.getElementById('start-btn').onclick=()=>showStep(2);
@@ -183,7 +175,7 @@ document.getElementById('next-btn-4').onclick=()=>showStep(5);
 document.getElementById('next-btn-5').onclick=()=>showStep(6);
 
 document.getElementById('confetti-btn').onclick=()=>{
-confetti({particleCount:150,spread:70});
+    confetti();
 };
 </script>
 
