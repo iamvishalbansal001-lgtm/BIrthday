@@ -262,9 +262,36 @@
 
     <button class="btn" id="next-btn-4">One Last Thing</button>
 </div>
+            <!-- Step 5: Rap Surprise -->
+<div class="step" id="step5">
+    <div class="emoji">🎧</div>
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">
+        Something I made for you...
+    </h2>
 
-            <!-- Step 5: Final Wish -->
-            <div class="step" id="step5">
+    <p class="text-lg text-gray-700 mb-6">
+        I couldn’t just say it… so I made something instead.
+    </p>
+
+    <!-- RAP AUDIO -->
+    <audio controls style="margin-top:10px;">
+        <source src="rap.mp3" type="audio/mpeg">
+    </audio>
+
+    <p class="mt-6 text-pink-600 font-semibold">
+        Every word in this… is for you ❤️
+    </p>
+
+    <p class="mt-8 text-gray-500">
+        (Play it till the end…)
+    </p>
+
+    <!-- BUTTON TO STEP 6 -->
+    <button class="btn" id="next-btn-5">One Last Thing</button>
+</div>
+
+            <!-- Step 6: Final Wish -->
+            <div class="step" id="step6">
                 <div class="emoji">🎂</div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">My Birthday Wish For You</h2>
                 <p class="text-lg text-gray-700 mb-8">
@@ -399,7 +426,7 @@
 
         // Step Navigation
         let currentStep = 1;
-        const totalSteps = 5;
+        const totalSteps = 6;
 
         function updateProgressBar() {
             const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
@@ -443,6 +470,10 @@
         document.getElementById('next-btn-4').addEventListener('click', () => {
             currentStep = 5;
             showStep(currentStep);
+        });
+        document.getElementById('next-btn-5').addEventListener('click', () => {
+    currentStep = 6;
+    showStep(currentStep);
         });
 
         // Confetti button
